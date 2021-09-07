@@ -1,4 +1,4 @@
--- /user/src/programs.lua
+-- /usr/src/programs.lua
 
 -- CyanPiano AwesomeWM
 -- Updated: 2021/09/07

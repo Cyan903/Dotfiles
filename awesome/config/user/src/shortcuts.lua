@@ -64,7 +64,7 @@ local shortcuts = {
         -- Launcher
         awful.key({ modkey }, "Return", function() awful.spawn(user.programs.terminal) end, { description = "Open the terminal", group = "Launcher" }),
         awful.key({ modkey }, "p", function() menubar.show() end, { description = "Show the menubar", group = "Launcher" }),
-        awful.key({ modkey }, "l", function() logout_popup.launch() end, {description = "Show logout screen", group = "Launcher"}),
+        awful.key({ modkey }, "l", function() logout_popup.launch() end, { description = "Show logout screen", group = "Launcher" }),
         awful.key({ modkey }, "r", function()
                 if not user.style.widgets.dmenu then
                     awful.screen.focused().promptbox:run() 
