@@ -1,7 +1,7 @@
 -- /user/src/programs.lua
 
 local programs = {
-    terminal = "xfce4-terminal",
+    terminal = "kitty",
     editor = "code",
     
     startup = {
