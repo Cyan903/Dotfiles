@@ -11,7 +11,6 @@ local shortcuts = {
     globalkeys = gears.table.join(
         -- Window Manager
         awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "Show help", group = "Window Manager" }),
-        awful.key({ modkey }, "w", function() maincontextmenu:show() end, { description = "Show main menu", group = "Window Manager" }),
         awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Window Manager" }),
         awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "Quit awesome", group = "Window Manager" }),
             awful.key({ modkey }, "x", function()
@@ -78,13 +77,44 @@ local shortcuts = {
 
         awful.key({ modkey }, "f", function()
                 if user.style.widgets.rofi then
-                    awful.spawn.with_shell("rofi -show run")
+                    awful.spawn.with_shell("rofi -show drun -show-icons")
                 else
                     awful.spawn.with_shell("notify-send 'rofi is not enabled.'`")
                 end
             end,
             
             { description = "Find program", group = "Launcher" }
+        ),
+
+        awful.key({ modkey }, "z", function()
+                if user.style.widgets.rofi then
+                    local userpath = user.style.ScriptsFolder
+                    local spawnRofi = string.gsub([[
+                        rofiS=$(ls USERPATH | rofi -dmenu -p "Execute") &&
+                        bash USERPATH_ROFI
+                    ]], '%S+', {
+                        ["USERPATH"] = userpath,
+                        ["USERPATH_ROFI"] = userpath.."/$rofiS"
+                    })
+
+                    awful.spawn.with_shell(spawnRofi)
+                else
+                    awful.spawn.with_shell("notify-send 'rofi is not enabled.'`")
+                end
+            end,
+            
+            { description = "Launch script...", group = "Launcher" }
+        ),
+
+        awful.key({ modkey }, "w", function()
+                if user.style.widgets.rofi then
+                    awful.spawn.with_shell("rofi -show window")
+                else
+                    awful.spawn.with_shell("notify-send 'rofi is not enabled.'`")
+                end
+            end,
+            
+            { description = "Find running window", group = "Launcher" }
         ),
 
         awful.key({ modkey }, "q", function()
@@ -97,7 +127,6 @@ local shortcuts = {
             
             { description = "Launch pcmanfm", group = "Launcher" }
         ),
-
 
         -- Layout
         awful.key({ modkey }, "l", function() awful.tag.incmwfact(0.05) end, { description = "Increase master width factor", group = "Layout" }),

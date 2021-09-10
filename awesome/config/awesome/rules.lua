@@ -35,7 +35,7 @@ awful.rules.rules = {
     {
         rule_any = {
             instance = {
-                -- "firefox",
+                "nitrogen"
             },
             
             class = {

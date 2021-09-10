@@ -2,6 +2,7 @@
 
 return {
     MainIcon = "/home/micah/.config/awesome/resources/manjaro.ico",
+    ScriptsFolder = "/home/micah/Dev/Scripts",
     windowCount = 6,
     background = "#ffffff",
     titlebar = false,
