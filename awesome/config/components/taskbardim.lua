@@ -1,3 +1,5 @@
+-- /components/taskbardim.lua
+
 wibox {
     visible = true,
     height = 30,
