@@ -1,0 +1,6 @@
+# ScreenshotClip
+# Brings up screenshot select tool.
+# Last Updated: 2021/09/10
+
+maim --select | tee /tmp/ss-maim-$(date +%s).png | xclip -selection clipboard -t image/png
+notify-send -i ~/Pictures/Static/camera.ico "Screenshot Captured"

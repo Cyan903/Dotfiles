@@ -1,0 +1,6 @@
+# AudioNotify
+# Shows current volume.
+# Last Updated: 2021/09/10
+
+number=`awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master) | sed "s/%//g"`
+notify-send -i ~/Pictures/Static/speaker.ico "Volume" -h int:value:$number -h string:synchronous:volume

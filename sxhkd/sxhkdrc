@@ -2,10 +2,10 @@ ctrl + backslash
   firefox
 
 ctrl + Print
-  maim --select | tee /tmp/ss-maim-$(date +%s).png | xclip -selection clipboard -t image/png; notify-send -i /home/micah/Pictures/Static/camera.ico "Screenshot Captured"
+  ~/Dev/Scripts/ScreenshotClip
 
 ctrl + shift + F12
-  amixer set Master 5%+
+  amixer set Master 5%+; ~/Dev/Scripts/AudioNotify
 
 ctrl + shift + F11
-  amixer set Master 5%-
+  amixer set Master 5%-; ~/Dev/Scripts/AudioNotify

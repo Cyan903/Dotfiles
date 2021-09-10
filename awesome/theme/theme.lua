@@ -1,7 +1,7 @@
 -- /usr/src/programs.lua
 
 -- CyanPiano AwesomeWM
--- Updated: 2021/09/07
+-- Updated: 2021/09/10
 
 local assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
