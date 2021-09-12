@@ -1,0 +1,123 @@
+/**
+ * Cyan Paper Rasi
+ * Dark version of the paper theme.
+ *
+ * Original theme by: Qball (Dave Davenport)
+ */
+
+* {
+    darkgrey: #181818;
+    black: #000000;
+    grey:  #eeeeee;
+    txtcolor: #ffffff;
+    selectedcolor: #eeeeee;
+
+    active1: #181818;
+    active2: #181818ff;
+    active3: #333333;
+    txtactive: #88888888;
+
+    text-color: @txtcolor;
+    background-color: #00000000;
+    border-color: #000000;
+    anchor: north;
+    spacing: 2;
+}
+
+window {
+    transparency: "screenshot";
+    background-color: #00000000;
+    border: 0;
+    padding: 0% 0% 1em 0%;
+    x-offset: 0;
+    y-offset: -30%;
+}
+
+mainbox {
+    padding: 0px;
+    border: 0;
+    spacing: 1%;
+}
+
+message {
+    border: 4px;
+    padding: 1em;
+    background-color: @darkgrey;
+}
+
+textbox normal {
+    padding: 0;
+    border: 0;
+}
+
+listview {
+    fixed-height: 1;
+    border: 4px;
+    padding: 1em;
+    reverse: false;
+
+    columns: 1;
+    background-color: @darkgrey;
+}
+
+element {
+    border: 0;
+    padding: 2px;
+    highlight: bold;
+}
+
+/* Odd colors */
+/* element alternate.normal { background-color: @active3; } */
+/**************/
+
+inputbar { children: [prompt, textbox-prompt-colon, entry, case-indicator]; }
+element-text { text-color: inherit; }
+element normal.normal { background-color: @active1; }
+element normal.urgent { background-color: @active1; }
+element normal.active { background-color: @active1; }
+element selected.normal {
+    text-color: @active1;
+    background-color: @selectedcolor;
+}
+
+element selected.active {
+    text-color: @active2;
+    background-color: @txtactive;
+}
+
+element alternate.active {
+    text-color: @txtactive;
+    background-color: @active3;
+}
+
+inputbar {
+    spacing: 0;
+    border: 4px;
+    padding: 0.5em 1em;
+    background-color: @active1;
+    index: 0;
+}
+
+inputbar normal {
+    foreground-color: @txtcolor;
+    background-color: @active1;
+}
+
+mode-switcher {
+    border: 4px;
+    padding: 0.5em 1em;
+    background-color: @grey;
+    index: 10;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: " -> ";
+    margin: 0px 0.3em 0em 0em;
+}
+
+error-message {
+    border: 2px;
+    padding: 1em;
+    background-color: #FF8888;
+}
