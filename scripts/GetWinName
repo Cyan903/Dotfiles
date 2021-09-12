@@ -1,0 +1,6 @@
+# GetWinName
+# Gets window name via selection.
+# Last Updated: 2021/09/11
+
+n=`xprop | awk '/WM_CLASS/{print $4}'`
+notify-send "Window name: $n"
