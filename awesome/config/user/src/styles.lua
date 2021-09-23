@@ -12,6 +12,11 @@ return {
         D = 6
     },
 
+    multipleMonitors = true,
+    screenOrder = {
+        2, 1
+    },
+
     widgets = {
         taskbar = true,
         naughty = false,
