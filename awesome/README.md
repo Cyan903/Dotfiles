@@ -3,7 +3,7 @@ Last updated: 2021/09/10
 
 Commands used:
 
-    xrandr -s 1920x1080 --rate 120
+    xrandr --output DVI-D-0 --mode 1920x1080 --rate 120 --primary
     sxhkd
     nitrogen --restore
     picom
