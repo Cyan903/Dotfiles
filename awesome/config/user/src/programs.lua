@@ -6,7 +6,9 @@ local programs = {
     
     startup = {
         default = {
-            "xrandr -s 1920x1080 --rate 120",
+            -- I have 2 monitors, but you would usually configure xrandr to your setup.
+            "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120 --primary",
+
             "sxhkd", "nitrogen --restore",
             "picom", "blueman-applet",
             "nm-applet", "start-pulseaudio-x11",
