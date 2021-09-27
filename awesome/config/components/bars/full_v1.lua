@@ -1,4 +1,4 @@
--- /components/taskbar.lua
+-- /components/bars/full_v1.lua
 
 -- Clock and calendar widget
 local clock = wibox.widget.textclock('<span foreground="#fff">   %b %d | %I:%M %p   </span>')
@@ -220,8 +220,8 @@ awful.screen.connect_for_each_screen(function(s)
             position = "top",
             screen = s,
             height = 25,
-            bg = "#181818",
-            border_color = "#181818",
+            bg = user.style.bar.color_bg,
+            border_color = user.style.bar.border_bg,
             border_width = 0,
         }
 

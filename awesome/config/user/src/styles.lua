@@ -29,5 +29,14 @@ return {
         color = "#000000a3",
         colorFocus = "#d1d1d1",
         width = 4,
+    },
+
+    bar = {
+        version = "part_v2",
+        color_bg = "#181818",
+        border_bg = "#181818",
+
+        -- Not used in any full bars.
+        outline_color = "#2F323A"
     }
 }

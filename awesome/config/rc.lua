@@ -1,7 +1,7 @@
 -- /user/src/programs.lua
 
 -- CyanPiano AwesomeWM
--- Updated: 2021/09/10
+-- Updated: 2021/09/26
 
 pcall(require, "luarocks.loader")
 
@@ -21,8 +21,16 @@ require("awful.autofocus")
 require("./awesome/errors")
 require("./awesome/rules")
 require("./awesome/signals")
-require("./components/taskbardim")
-require("./components/taskbar")
+
+
+if user.style.widgets.taskbar then
+    if string.find(user.style.bar.version, "full") then
+        require("components.taskbardim")
+    end
+
+    require("./components/bars/"..user.style.bar.version)
+
+end
 
 user.shortcuts.init()
 user.programs.autostart()
