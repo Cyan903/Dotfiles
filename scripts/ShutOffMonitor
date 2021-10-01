@@ -1,0 +1,7 @@
+# ShutOffMonitor
+# Shuts off monitor and fixes awesomewm
+# Last Updated: 2021/09/30
+
+xrandr --output HDMI-A-0 --off
+nitrogen --restore
+picom &
