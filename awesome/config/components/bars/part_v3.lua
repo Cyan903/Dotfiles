@@ -1,14 +1,13 @@
--- /components/bars/part_v2.lua
+-- /components/bars/part_v3.lua
 
 -- Clock and calendar widget
 local clock = wibox.widget.textclock('<span foreground="#fff">%b %d | %I:%M %p</span>')
 
 -- Calendar
 local calendar_widget = require("../ext/awesome-wm-widgets/calendar-widget/calendar")
-local cw = calendar_widget()
 local cw = calendar_widget({
     theme = "dark",
-    placement = "top_right",
+    placement = "bottom_right",
     radius = 8
 })
 
@@ -16,31 +15,11 @@ clock:connect_signal("button::press",  function(_, _, _, button)
     if button == 1 then cw.toggle() end
 end)
 
--- CPU
-local cpu_widget = require("../ext/awesome-wm-widgets/cpu-widget/cpu-widget")
-local cpuTask = cpu_widget({
-    width = 70,
-    step_width = 2,
-    step_spacing = 0,
-    color = "#434c5e"
-})
-
 -- Volume
 local volume_widget = require("../ext/awesome-wm-widgets/volume-widget/volume")
 local volumeTask = volume_widget({
     widget_type = "icon_and_text"
 })
-
--- Power
-local logout_popup = require("../../ext/awesome-wm-widgets/logout-popup-widget/logout-popup")
-local logoutTask = wibox.widget {
-    image = "/home/micah/.config/awesome/resources/power.png",
-    widget = wibox.widget.imagebox
-}
-
-local logoutClick = function(lx, ly, button, mods, find_widgets_result) logout_popup.launch() end
-logoutTask:connect_signal("button::press", logoutClick)
-
 
 -- Main menu
 awmenu = {
@@ -233,13 +212,33 @@ awful.screen.connect_for_each_screen(function(s)
         }
     end
 
+    local function wrapRoundExtra(obj, r, l, t, b)
+        return {
+            {
+                obj,
+                right = r,
+                left = l,
+                top = t,
+                bottom = b,
+                widget = wibox.container.margin
+            },
+
+            bg = user.style.bar.outline_color,
+            widget = wibox.container.background,
+                        
+            shape = function(cr, width, height)
+                gears.shape.rounded_rect(cr, width, height, 30)
+            end  
+        }
+    end
+
     if user.style.widgets.taskbar then
         local options = {
-            position = "top",
+            position = "bottom",
             screen = s,
-            height = 25,
-            bg = "#202329",
-            border_color = "#202329",
+            height = 30,
+            bg = user.style.bar.color_bg,
+            border_color = user.style.bar.border_bg,
             border_width = 8,
         }
 
@@ -255,28 +254,6 @@ awful.screen.connect_for_each_screen(function(s)
                 layout = wibox.layout.fixed.horizontal,
                 spacing = 10,
 
-                -- These don't show... I still don't know what promptbox is.
-                launcher,
-                s.promptbox,
-
-                {
-                    {
-                        s.layoutbox,
-                        right = 5,
-                        left = 5,
-                        top = 5,
-                        bottom = 5,
-                        widget = wibox.container.margin
-                    },
-        
-                    bg = user.style.bar.outline_color,
-                    widget = wibox.container.background,
-                                
-                    shape = function(cr, width, height)
-                        gears.shape.rounded_rect(cr, width, height, 30)
-                    end  
-                },
-
                 wrapRound(s.tagslist),
                 wrapRound(s.tasklist)
             },
@@ -287,28 +264,9 @@ awful.screen.connect_for_each_screen(function(s)
                 layout = wibox.layout.fixed.horizontal,
                 spacing = 10,
 
-                wrapRound(volumeTask, 10, 15),
-                wrapRound(cpuTask),
+                wrapRoundExtra(wibox.widget.systray(), 8, 8, 8, 8),
                 wrapRound(clock),
-                -- wrapRound(wibox.widget.systray()),
-
-                {
-                    {
-                        logoutTask,
-                        right = 5,
-                        left = 5,
-                        top = 5,
-                        bottom = 5,
-                        widget = wibox.container.margin
-                    },
-        
-                    bg = user.style.bar.outline_color,
-                    widget = wibox.container.background,
-                                
-                    shape = function(cr, width, height)
-                        gears.shape.rounded_rect(cr, width, height, 30)
-                    end  
-                }
+                wrapRoundExtra(s.layoutbox, 8, 8, 8, 8)
             }
         }
 

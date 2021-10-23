@@ -1,0 +1,14 @@
+ctrl + backslash
+  firefox
+
+ctrl + Print
+  rofiS=$(ls ~/Dev/Scripts | rofi -dmenu -p "Execute") && bash ~/Dev/Scripts/$rofiS
+
+ctrl + shift + F12
+  amixer set Master 5%+
+
+ctrl + shift + F11
+  amixer set Master 5%-
+
+mod4 + r
+    dmenu_run
