@@ -42,7 +42,8 @@ awful.rules.rules = {
         rule_any = {
             instance = {
                 "nitrogen",
-                "lutris"
+                "lutris",
+                "osu!.exe"
             },
             
             class = {
