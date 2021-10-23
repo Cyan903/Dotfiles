@@ -1,7 +1,7 @@
 -- /user/src/programs.lua
 
 -- CyanPiano AwesomeWM
--- Updated: 2021/09/26
+-- Updated: 2021/10/22
 
 pcall(require, "luarocks.loader")
 
@@ -22,14 +22,13 @@ require("./awesome/errors")
 require("./awesome/rules")
 require("./awesome/signals")
 
-
+-- If bar has full in its name, load the dim.
 if user.style.widgets.taskbar then
     if string.find(user.style.bar.version, "full") then
         require("components.taskbardim")
     end
 
     require("./components/bars/"..user.style.bar.version)
-
 end
 
 user.shortcuts.init()

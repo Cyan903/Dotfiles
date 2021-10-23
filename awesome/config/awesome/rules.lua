@@ -58,5 +58,13 @@ awful.rules.rules = {
         rule_any = {
             type = { "normal", "dialog" }
         }, properties = { titlebars_enabled = user.style.titlebar }
-    }
+    },
+
+    {
+        rule = { instance = "plank" },
+        properties = {
+            border_width = false,
+            ontop = true
+        }
+    },
 }

@@ -246,12 +246,6 @@ awful.screen.connect_for_each_screen(function(s)
 
             {
                 layout = wibox.layout.fixed.horizontal,
-                -- spacing = 1,
-                -- spacing_widget = {
-                --     color = "#888",
-                --     shape = gears.shape.bar,
-                --     widget = wibox.widget.separator,
-                -- },
 
                 wibox.layout.margin(volumeTask, 5, 5, 0, 0),
                 wibox.layout.margin(cpuTask, 5, 5, 0, 0),

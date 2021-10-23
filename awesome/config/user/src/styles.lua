@@ -32,9 +32,9 @@ return {
     },
 
     bar = {
-        version = "part_v2",
-        color_bg = "#181818",
-        border_bg = "#181818",
+        version = "full_v1",
+        color_bg = "#202329",
+        border_bg = "#202329",
 
         -- Not used in any full bars.
         outline_color = "#2F323A"
