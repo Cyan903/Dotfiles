@@ -2,7 +2,7 @@ ctrl + backslash
   firefox
 
 ctrl + Print
-  ls ~/Dev/Scripts | rofi -dmenu -p "Execute"
+  ~/Dev/Scripts/ShowRofi
 
 ctrl + shift + F12
   amixer set Master 5%+; ~/Dev/Scripts/AudioNotify

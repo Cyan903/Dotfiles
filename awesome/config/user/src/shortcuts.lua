@@ -85,27 +85,7 @@ local shortcuts = {
             
             { description = "Find program", group = "Launcher" }
         ),
-
-        awful.key({ modkey }, "z", function()
-                if user.style.widgets.rofi then
-                    local userpath = user.style.ScriptsFolder
-                    local spawnRofi = string.gsub([[
-                        rofiS=$(ls USERPATH | rofi -dmenu -p "Execute") &&
-                        bash USERPATH_ROFI
-                    ]], '%S+', {
-                        ["USERPATH"] = userpath,
-                        ["USERPATH_ROFI"] = userpath.."/$rofiS"
-                    })
-
-                    awful.spawn.with_shell(spawnRofi)
-                else
-                    awful.spawn.with_shell("notify-send 'rofi is not enabled.'`")
-                end
-            end,
-            
-            { description = "Launch script...", group = "Launcher" }
-        ),
-
+        
         awful.key({ modkey }, "w", function()
                 if user.style.widgets.rofi then
                     awful.spawn.with_shell("rofi -show window")

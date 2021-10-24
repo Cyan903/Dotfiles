@@ -1,0 +1,6 @@
+# ShowRofi
+# Shows rofi scrip launcher
+# Last Updated: 2021/10/24
+
+rofiS=$(ls /home/micah/Dev/Scripts | rofi -dmenu -p "Execute")
+bash /home/micah/Dev/Scripts/$rofiS
