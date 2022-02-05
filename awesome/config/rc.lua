@@ -1,7 +1,7 @@
 -- /user/src/programs.lua
 
 -- CyanPiano AwesomeWM
--- Updated: 2021/10/22
+-- Updated: 2022/02/05
 
 pcall(require, "luarocks.loader")
 

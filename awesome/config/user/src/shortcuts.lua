@@ -13,17 +13,6 @@ local shortcuts = {
         awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "Show help", group = "Window Manager" }),
         awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "Reload awesome", group = "Window Manager" }),
         awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "Quit awesome", group = "Window Manager" }),
-            awful.key({ modkey }, "x", function()
-                awful.prompt.run {
-                    prompt = "Run Lua code: ",
-                    textbox = awful.screen.focused().promptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                }
-            end,
-            
-            { description = "Lua execute prompt", group = "Window Manager" }
-        ),
         
         -- Tag
         awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "View previous", group = "Tag" }),
