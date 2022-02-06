@@ -1,5 +1,5 @@
 # AwesomeWM Configuration
-Last updated: 2021/09/10
+Last updated: 2022/02/06
 
 Commands used:
 
@@ -12,4 +12,4 @@ Commands used:
     start-pulseaudio-x11
     lxsession
         
-These can be changed by editing `/.config/awesome/user/src/programs.lua`.
+These can be changed by editing `/.config/awesome/user/src/programs.lua`. You also need to [configure awesome-shortcut.json](https://github.com/CyanPiano/awesome-shortcut-json/blob/main/README.md)

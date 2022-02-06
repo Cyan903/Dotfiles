@@ -204,7 +204,7 @@ shortcuts.bindkeys = function()
 end
 
 shortcuts.init = function()
-    shortcuts.bindkeys(shortcuts)
+    shortcuts.bindkeys()
 
     -- Root buttons
     root.buttons(gears.table.join(
@@ -213,7 +213,10 @@ shortcuts.init = function()
         awful.button({}, 5, awful.tag.viewprev)
     ))
     
-    root.keys(shortcuts.globalkeys)    
+    root.keys(gears.table.join(
+        require("awesome-shortcut-json.awesome-shortcut"),
+        shortcuts.globalkeys
+    ))
 end
 
 return shortcuts
