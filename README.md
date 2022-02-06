@@ -10,7 +10,7 @@ Most of these files expect `~/Pictures/Static` to exist along with `~/Dev/Script
 Programs I'm using (these aren't required to be installed, just change `awesome/config/user/src/programs.lua` if you want to use your own).
 - xrandr
 - nitrogen
-- picom ([github.com/jonaburg/picom](https://github.com/jonaburg/picom).)
+- picom ([github.com/jonaburg/picom](https://github.com/jonaburg/picom))
 - blueman
 - pulseaudio
 - lxsession
@@ -21,4 +21,4 @@ These are the programs that make up the theme.
 - Kitty
 - Neofetch
 - Rofi
-- Firefox (along with the custom css)
+- [Firefox](https://github.com/CyanPiano/Firefox-theme)
