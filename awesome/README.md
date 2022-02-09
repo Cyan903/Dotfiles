@@ -1,10 +1,9 @@
 # AwesomeWM Configuration
-Last updated: 2022/02/06
+Last updated: 2022/02/09
 
 Commands used:
 
     xrandr --output DVI-D-0 --mode 1920x1080 --rate 120 --primary
-    sxhkd
     nitrogen --restore
     picom
     blueman-applet

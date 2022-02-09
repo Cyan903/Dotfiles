@@ -1,5 +1,5 @@
 # CyanPiano
-# Last updated: 2021/09/26
+# Last updated: 2022/02/09
 
 [global]
     monitor = 0
@@ -60,13 +60,13 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#202329"
+    background = "#181818"
     foreground = "#888888"
     timeout = 10
     icon = /home/micah/Pictures/Static/manjaro-themed.png
 
 [urgency_normal]
-    background = "#202329"
+    background = "#181818"
     foreground = "#ffffff"
     timeout = 10
     icon = /home/micah/Pictures/Static/manjaro-themed.png
