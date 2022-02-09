@@ -5,7 +5,7 @@ if user.style.multipleMonitors then
         local curscreen = user.style.screenOrder[s]
         local box = wibox {
             visible = true,
-            height = 30,
+            height = 27,
             bg = "#000000a1",
             width = screen[curscreen].geometry.width
         }
@@ -20,7 +20,7 @@ if user.style.multipleMonitors then
 else
     wibox {
         visible = true,
-        height = 30,
+        height = 27,
         bg = "#000000a1",
         width = screen[1].geometry.width   
     }:setup {
